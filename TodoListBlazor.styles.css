@@ -1,0 +1,213 @@
+/* /Pages/Index.razor.rz.scp.css */
+
+
+.add-todo[b-q3bi6y7m24] {
+    width: 100%;
+    position: relative;
+    height: 40px;
+    margin: 2px 0 1px;
+}
+
+    .add-todo button[b-q3bi6y7m24] {
+        position: absolute;
+        display: inline-block;
+        width: 60px;
+        height: 100%;
+        background: transparent;
+        border: 0;
+        right: 0;
+        top: 0;
+        color: #b3b3b3;
+        cursor: pointer;
+        background-repeat: no-repeat;
+    }
+
+        .add-todo button:hover[b-q3bi6y7m24] {
+            color: #666666;
+        }
+
+        .add-todo button:focus[b-q3bi6y7m24] {
+            outline: none;
+        }
+
+    .add-todo input[b-q3bi6y7m24] {
+        border: 0;
+        font-size: 1rem;
+        height: 100%;
+        background: transparent;
+        padding-left: 30px;
+        width: 100%;
+        color: #666666;
+        letter-spacing: 2px;
+        font-weight: 600;
+        border-radius: 5px 5px 0px 0px;
+        box-shadow: 0 -1px 0 0 white, 0 -2px 0 0 #e6e6e6;
+    }
+
+        .add-todo input:focus[b-q3bi6y7m24] {
+            outline: none;
+        }
+
+        .add-todo input[b-q3bi6y7m24]::placeholder {
+            color: #b3b3b3;
+            letter-spacing: 2px;
+            opacity: 1;
+        }
+
+.todo-list[b-q3bi6y7m24] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.todo-list[b-q3bi6y7m24] {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.todo-item[b-q3bi6y7m24] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0 -1px 0 0 white, 0 -2px 0 0 #e6e6e6;
+    height: 40px;
+    padding: 0 33px 0 30px;
+    line-height: 40px;
+    color: #284664;
+    letter-spacing: 2px;
+}
+
+    .todo-item .btn[b-q3bi6y7m24] {
+        color: #284664;
+        border: none;
+        background: none;
+        cursor: pointer;
+        -webkit-appearance: none;
+    }
+
+        .todo-item .btn:focus[b-q3bi6y7m24] {
+            outline: 0 !important;
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+        }
+
+.todo-item label.completed[b-q3bi6y7m24] {
+    text-decoration: line-through;
+}
+
+.completed[b-q3bi6y7m24] {
+    color: #16a085;
+}
+
+.delete[b-q3bi6y7m24] {
+    color: #af544f;
+}
+/* /Shared/MainLayout.razor.rz.scp.css */
+.page[b-b50vsdrneq] {
+    background: #5A8FB1;
+    margin: 0;
+}
+
+.container[b-b50vsdrneq] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-end;
+    justify-content: flex-end;
+    font-size: 16px;
+    font-weight: 600;
+    min-height: calc(100vh - 60px);
+    max-width: 730px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.wrapper[b-b50vsdrneq] {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    background: #ecf0f1;
+    align-items: center;
+    max-width: calc(100% - 20px);
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.header[b-b50vsdrneq] {
+    text-align: center;
+    background: #284664;
+    height: 60px;
+    box-sizing: border-box;
+    color: #ecf0f1;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 100%;
+    font-weight: 700;
+}
+/* /Shared/NavMenu.razor.rz.scp.css */
+.navbar-toggler[b-grl98u8cgk] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-grl98u8cgk] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-grl98u8cgk] {
+    font-size: 1.1rem;
+}
+
+.oi[b-grl98u8cgk] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-grl98u8cgk] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-grl98u8cgk] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-grl98u8cgk] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-grl98u8cgk]  a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+.nav-item[b-grl98u8cgk]  a.active {
+    background-color: rgba(255,255,255,0.25);
+    color: white;
+}
+
+.nav-item[b-grl98u8cgk]  a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-grl98u8cgk] {
+        display: none;
+    }
+
+    .collapse[b-grl98u8cgk] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}
