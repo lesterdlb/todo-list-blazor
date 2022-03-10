@@ -1,0 +1,104 @@
+﻿
+
+.add-todo {
+    width: 100%;
+    position: relative;
+    height: 40px;
+    margin: 2px 0 1px;
+}
+
+    .add-todo button {
+        position: absolute;
+        display: inline-block;
+        width: 60px;
+        height: 100%;
+        background: transparent;
+        border: 0;
+        right: 0;
+        top: 0;
+        color: #b3b3b3;
+        cursor: pointer;
+        background-repeat: no-repeat;
+    }
+
+        .add-todo button:hover {
+            color: #666666;
+        }
+
+        .add-todo button:focus {
+            outline: none;
+        }
+
+    .add-todo input {
+        border: 0;
+        font-size: 1rem;
+        height: 100%;
+        background: transparent;
+        padding-left: 30px;
+        width: 100%;
+        color: #666666;
+        letter-spacing: 2px;
+        font-weight: 600;
+        border-radius: 5px 5px 0px 0px;
+        box-shadow: 0 -1px 0 0 white, 0 -2px 0 0 #e6e6e6;
+    }
+
+        .add-todo input:focus {
+            outline: none;
+        }
+
+        .add-todo input::placeholder {
+            color: #b3b3b3;
+            letter-spacing: 2px;
+            opacity: 1;
+        }
+
+.todo-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0 -1px 0 0 white, 0 -2px 0 0 #e6e6e6;
+    height: 40px;
+    padding: 0 33px 0 30px;
+    line-height: 40px;
+    color: #284664;
+    letter-spacing: 2px;
+}
+
+    .todo-item .btn {
+        color: #284664;
+        border: none;
+        background: none;
+        cursor: pointer;
+        -webkit-appearance: none;
+    }
+
+        .todo-item .btn:focus {
+            outline: 0 !important;
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+        }
+
+.todo-item label.completed {
+    text-decoration: line-through;
+}
+
+.completed {
+    color: #16a085;
+}
+
+.delete {
+    color: #af544f;
+}
