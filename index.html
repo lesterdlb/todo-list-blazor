@@ -1,38 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>TodoListBlazor</title>
-    <base href="/todo-list-blazor/" />
-    <link href="css/app.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="TodoListBlazor.styles.css" rel="stylesheet" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Todo List Blazor</title>
+    <base href="/"/>
+    <link href="css/app.css" rel="stylesheet"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"/>
+    <link href="TodoListBlazor.styles.css" rel="stylesheet"/>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
 
 <body>
-    <div id="app">Loading...</div>
-
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
+<div id="app">
+    <div style="display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				font-family: 'Quicksand', sans-serif;">
+        <div style="text-align: center">
+            <i class="fa-solid fa-circle-notch fa-spin"
+               style="font-size: 2rem; color: #5a8fb1; margin-bottom: 1rem"></i>
+            <p style="color: #284664; font-weight: 600">Loading...</p>
+        </div>
     </div>
-    <script src="_framework/blazor.webassembly.js"></script>
+</div>
 
-    <script>
-        function Scroll() {
-            document.documentElement.scrollTo({
-                top: document.documentElement.scrollHeight,
-                left: 0,
-                behavior: 'smooth'
-            })
-        }
-    </script>
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+
+<script src="_framework/blazor.webassembly.js"></script>
+<script src="js/theme.js"></script>
 </body>
 </html>
