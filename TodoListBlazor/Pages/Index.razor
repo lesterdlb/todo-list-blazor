@@ -1,29 +1,39 @@
 ﻿@page "/"
-@inject IJSRuntime JS
+@inject IJSRuntime Js
 
 <PageTitle>Todo List</PageTitle>
 
-<ul class="todo-list">
-    @foreach (var todo in Enumerable.Reverse<TodoItem>(todos))
-    {
-        <li class="todo-item " @key="todo.Id" data-id="todo.Id">
-            <label class="@(todo.IsDone ? "completed": "")">@todo.Title</label>
-            <div class="buttons">
-                <button type="button" class="btn" @onclick="() => todo.IsDone= !todo.IsDone">
-                    <i class="fa-regular @(todo.IsDone ? "fa-square-check completed": "fa-square") "></i>
-                </button>
-                <button type="button" class="btn" @onclick="() => DeleteTodo(todo.Id)">
-                    <i class="fa-solid fa-trash-can delete"></i>
-                </button>
-            </div>
-        </li>
-    }
-</ul>
-<div id="add-todo" class="add-todo">
-    <input @ref="newTodoInput" class="add-todo" placeholder="New Todo"
-           @oninput="@((e) => { newTodo = e.Value?.ToString(); })"
-           @bind="newTodo" @onkeydown="@HandleEnter" />
-    <button @onclick="AddTodo">
-        <i class="fa-solid fa-plus"></i>
-    </button>
+<button class="theme-toggle" @onclick="ToggleTheme" title="Change theme">
+    <i class="fa-solid @(_isDarkTheme ? "fa-sun" : "fa-moon")"></i>
+</button>
+
+<div class="page-content">
+    <ul class="todo-list">
+        @foreach (var todo in _todos)
+        {
+            <li class="todo-item @(todo.IsDone ? "completed" : "")" @key="todo.Id" data-id="todo.Id">
+                <div class="todo-content">
+                    <label class="@(todo.IsDone ? "completed" : "")">@todo.Title</label>
+                </div>
+                <div class="buttons">
+                    <button type="button" class="btn" @onclick="() => todo.IsDone = !todo.IsDone"
+                            title="@(todo.IsDone ? "Mark as pending" : "Mark as completed")">
+                        <i class="fa-regular @(todo.IsDone ? "fa-square-check completed" : "fa-square")"></i>
+                    </button>
+                    <button type="button" class="btn" @onclick="() => DeleteTodo(todo.Id)" title="Delete Todo">
+                        <i class="fa-solid fa-trash-can delete"></i>
+                    </button>
+                </div>
+            </li>
+        }
+    </ul>
+
+    <div id="add-todo" class="add-todo">
+        <input @ref="_newTodoInput" class="add-todo" placeholder="New Todo..."
+               @oninput="@(e => { _newTodo = e.Value?.ToString(); })"
+               @bind="_newTodo" @onkeydown="@HandleEnter"/>
+        <button @onclick="AddTodo" title="Add Todo">
+            <i class="fa-solid fa-plus"></i>
+        </button>
+    </div>
 </div>

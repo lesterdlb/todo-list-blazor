@@ -1,9 +1,8 @@
-﻿namespace TodoListBlazor
+﻿namespace TodoListBlazor;
+
+public class TodoItem
 {
-    public class TodoItem
-    {
-        public Guid Id { get; set; }
-        public string? Title { get; set; }
-        public bool IsDone { get; set; }
-    }
+    public Guid Id { get; init; } = Guid.NewGuid();
+    public required string Title { get; init; }
+    public bool IsDone { get; set; }
 }

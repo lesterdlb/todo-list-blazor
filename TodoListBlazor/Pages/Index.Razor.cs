@@ -2,54 +2,61 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
 
-namespace TodoListBlazor.Pages
+namespace TodoListBlazor.Pages;
+
+public partial class Index
 {
-    public partial class Index
+    private ElementReference _newTodoInput;
+    private string? _newTodo;
+    private bool _isDarkTheme;
+
+    private readonly List<TodoItem> _todos =
+    [
+        new() { Id = Guid.NewGuid(), Title = "Do something important! 🙃", IsDone = false },
+        new() { Id = Guid.NewGuid(), Title = "Do not press the button. 🤔", IsDone = false },
+        new() { Id = Guid.NewGuid(), Title = "This task is ok :D", IsDone = true }
+    ];
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        ElementReference newTodoInput;
-        private string? newTodo;
-        private readonly List<TodoItem> todos = new()
+        if (firstRender)
         {
-            new TodoItem { Id = Guid.NewGuid(), Title = "Do something important! 🙃", IsDone = false },
-            new TodoItem { Id = Guid.NewGuid(), Title = "Do not press the button. 🤔", IsDone = false },
-            new TodoItem { Id = Guid.NewGuid(), Title = "This task is ok :D", IsDone = true }
-        };
+            _isDarkTheme = await Js.InvokeAsync<bool>("isDarkTheme");
+            StateHasChanged();
 
-        protected override async void OnAfterRender(bool firstRender)
-        {
-            base.OnAfterRender(firstRender);
-
-            if (firstRender)
-                await newTodoInput.FocusAsync();
+            await _newTodoInput.FocusAsync();
         }
+    }
 
-        public async Task HandleEnter(KeyboardEventArgs e)
+    private async Task HandleEnter(KeyboardEventArgs e)
+    {
+        if (e.Code is "Enter" or "NumpadEnter")
         {
-            if (e.Code == "Enter" || e.Code == "NumpadEnter")
-            {
-                await AddTodo();
-            }
+            await AddTodo();
         }
+    }
 
-        public async Task AddTodo()
+    private async Task AddTodo()
+    {
+        if (!string.IsNullOrWhiteSpace(_newTodo))
         {
-            if (!string.IsNullOrEmpty(newTodo))
-            {
-                todos.Add(new TodoItem { Id = Guid.NewGuid(), Title = newTodo });
-                newTodo = string.Empty;
-                await newTodoInput.FocusAsync();
-                await JS.InvokeVoidAsync("Scroll");
-            }
-        }
+            _todos.Add(new TodoItem { Id = Guid.NewGuid(), Title = _newTodo.Trim() });
+            _newTodo = string.Empty;
+            StateHasChanged();
 
-        public void DeleteTodo(Guid id)
-        {
-            todos.RemoveAll(t => t.Id == id);
+            await _newTodoInput.FocusAsync();
+            await Js.InvokeVoidAsync("Scroll");
         }
+    }
 
-        public static void CompleteTodo(bool done)
-        {
-            _ = !done;
-        }
+    private void DeleteTodo(Guid id)
+    {
+        _todos.RemoveAll(t => t.Id == id);
+    }
+
+    private async Task ToggleTheme()
+    {
+        _isDarkTheme = !_isDarkTheme;
+        await Js.InvokeVoidAsync("toggleTheme", _isDarkTheme);
     }
 }
