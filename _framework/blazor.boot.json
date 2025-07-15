@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TodoListBlazor",
   "resources": {
-    "hash": "sha256-0x+0DQ+FkJ4NYpHJRWz1biimHQ1de1snCzj4C/EJzxI=",
+    "hash": "sha256-E4GspoI14JVbWB68+SE9GNEcSQeMVkMwGW1PetovWw0=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.lecvqjlb2p.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.of8fbrbq5n.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
@@ -35,7 +35,7 @@
       "System.Text.Json.ry8rqdhije.wasm": "System.Text.Json.wasm",
       "System.Text.RegularExpressions.uppli1il33.wasm": "System.Text.RegularExpressions.wasm",
       "System.Private.CoreLib.01yktch6oe.wasm": "System.Private.CoreLib.wasm",
-      "TodoListBlazor.ntuu9grgk8.wasm": "TodoListBlazor.wasm",
+      "TodoListBlazor.nr17lsjqvz.wasm": "TodoListBlazor.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.native.st0ovrfdhi.js": "dotnet.native.js",
       "dotnet.native.67rumul467.wasm": "dotnet.native.wasm",
@@ -93,7 +93,7 @@
       "System.Text.Encodings.Web.17hm3y46w3.wasm": "sha256-c5RLUrDt4sG/1BUZLDKBL/8r3macGjhggRplXaBWcBQ=",
       "System.Text.Json.ry8rqdhije.wasm": "sha256-I6Sjl0T+XjAf0PvHIq8yVHrcCk0xRVkldN7mzn8Ipm0=",
       "System.Text.RegularExpressions.uppli1il33.wasm": "sha256-cssgrj2fLKJui+a09EbhoMvUEqUJHPWKR47Ri3l887A=",
-      "TodoListBlazor.ntuu9grgk8.wasm": "sha256-i5AV/ake9uxa52/aRxK+kzgpU0zbRNA/y9GUbJWeLJ8="
+      "TodoListBlazor.nr17lsjqvz.wasm": "sha256-s9mUQyOYki4I0cOFG9CoVezQpuTpVYp1Cg9lMT1NNU4="
     }
   },
   "cacheBootResources": true,
